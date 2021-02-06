@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+    <title>{% block title %}{% endblock title %}Uddhav</title>
+  </head>
+  <body>
+  <style>
+.jumbotron {
+  background-color: #2d2d30; /* blue */
+  color: #bdbdbd;
+}
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}"><u><h3></h3></u></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+ </nav>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">      
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link active " href="{% url 'home' %}">HOME </a>
+        </li>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            TICKET BOOKING
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="train">TRAIN</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="bus">BUS</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" href="plain">PLAIN</a></li>
+          </ul>
+        </li>
+      <li class="nav-item ">
+        <a class="nav-link active " href="carrental">CAR RENTAL</a>
+      </li>
+      <li class="nav-item ">
+          <a class="nav-link active" href="contact">CONTACT US</a>
+        </li>
+      </ul>
+    </div>
+      </ul>
+      </div>
+    </div>
+ </nav>
+ <div class="jumbotron text-center">  
+
+ {% if messages %}
+  {% for message in  messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show " role="alert">
+ <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {% endfor %}
+  {% endif %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    
+ 
+{% block body %}{% endblock body %} 
+
+</body>
+</html>    
+

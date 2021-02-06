@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home
+{% endblock title %}
+ {% block body %}
+ 
+ 
+ <div class="container ">
+ 
+ <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+    
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static '40.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+       <div class=textcenter> <h4>NEER TOURS and TRAVELSS</h4></div>
+        
+
+      </div>
+    </div>
+   </div>
+  
+
+</div>
+
+        
+      
+</main>
+</div>
+ {% endblock body %} 
