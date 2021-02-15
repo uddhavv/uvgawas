@@ -6,8 +6,10 @@ urlpatterns = [
     path('carrental',views.carrental,name='carrental'),
     path('services',views.services,name='services'),
     path('contact',views.contact,name='contact1'),
-    path('train',views.Train,name='Train'),
-    path('bus',views.Bus,name='Bus'),
-    path('plain',views.Plain,name='Plain'),
+    path('train',views.train,name='Train'),
+    path('bus',views.bus,name='Bus'),
+    path('plain',views.plain,name='Plain'),
+    path('carform',views.carform,name='carform')
+
 
 ]

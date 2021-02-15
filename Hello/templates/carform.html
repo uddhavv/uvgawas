@@ -1,75 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
+{% csrf_token %}
 
-{% block title %}Train tickets
+{% block title %}Rent Car
 {% endblock title %}
 {% block body %}
+
 <div class="container mb-3 py-4">
-    <h1 class="text-danger text-center">|| Train Ticket ||</h1>
-    <form method="post" action="">
+    <h1 class="text-danger text-center">|| Car Renting Form ||</h1>
+    <form method="post" action="/contact">
     {% csrf_token %}
     <div style="color:AntiqueWhite;">
         <div class="row mb-3 me-3">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="Tname" name="Tname" placeholder="Enter your Name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
         </div>
         </div>
 
         <div class="row mb-3 me-3">
             <label for="email" class="col-sm-2 col-form-label">Email address</label>
              <div class="col-sm-10">
-            <input type="email" class="form-control" id="Temail" name="Temail" placeholder="Enter Your Email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
         </div>
         </div>
         <div class="row mb-3 me-3 ">
             <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
             <div class="col-sm-10">
-            <input type="phone" class="form-control" id="Tphone" name="Tphone" placeholder="Enter Your Phone Number">
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
         </div></div>      
         <div class="row mb-3 me-3">
             <label for="start" class="col-sm-2 col-form-label">Starting Point</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="Tstart" name="Tstart" placeholder="From">
+            <input type="text" class="form-control" id="start" name="start" placeholder="From">
         </div></div>     
         <div class="row mb-3 me-3">
             <label for="end" class="col-sm-2 col-form-label">Destination</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="Tend" name="Tend" placeholder="To">
+            <input type="text" class="form-control" id="end" name="end" placeholder="To">
         </div></div>   
         <div class="row mb-3 me-3">
             <label for="date" class="col-sm-2 col-form-label">Date of Departure</label>
             <div class="col-sm-10">
-            <input type="date" class="form-control" id="Tdate" name="Tdate" placeholder="Departure date">
+            <input type="date" class="form-control" id="date" name="date" placeholder="Departure date">
         </div> </div>   
-        <div class="row mb-3 me-3">
-            <label for="date" class="col-sm-2 col-form-label">No of Tickets</label>
-            <div class="col-sm-10">
-            <input type="text" class="form-control" id="Tticket" name="Tticket" placeholder="tickets">
-        </div> </div>         
         <div class="row mb-3 me-3">
             <label for="desc" class="col-sm-2 col-form-label">If you want to write something</label>
             <div class="col-sm-10">
-            <textarea class="form-control" id="Tdesc" rows="3" name="Tdesc"></textarea>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
         </div>
         </div>
         </div>
         <button class="btn btn-success btn-lg" type="submit">Submit</button>
     </form>
 </div>
-<footer class="text-muted py-5">
-  <div class="container">
-      <div style="color:white;">
 
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">We make travelling EAZEEEE with &copy; UV Tours, so pack your bag and TRAVELLL </p>
-    <p class="mb-0">New to TICKETMAN <a href="{% url 'home' %}">Visit the homepage</a> or contact us <a href="contact"> to get good offers</a>.</p>
-  </div></div>
-</footer>
 {% endblock body %}
-
-
-  
-

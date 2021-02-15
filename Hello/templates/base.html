@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,7 +12,7 @@
     
     <title>{% block title %}{% endblock title %}Uddhav</title>
   </head>
-  <body>
+  <body id="bg" style="background-image: url('{% static '22.jpg' %}');">
   <style>
 .jumbotron {
   background-color: #2d2d30; /* blue */
@@ -19,16 +21,16 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'home' %}"><u><h3></h3></u></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<br>
+  <a><u><h2><marquee width = "75%" scrollamount="25">A MORE REWARDING WAY To TRAVEL</marquee></h2></u></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" >
+    
   </button>
 
 
 
  </nav>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">      
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -46,7 +48,7 @@
             <div class="dropdown-divider"></div>
             <li><a class="dropdown-item" href="bus">BUS</a></li>
             <div class="dropdown-divider"></div>
-            <li><a class="dropdown-item" href="plain">PLAIN</a></li>
+            <li><a class="dropdown-item" href="plain">PLANE</a></li>
           </ul>
         </li>
       <li class="nav-item ">
@@ -58,10 +60,15 @@
       </ul>
     </div>
       </ul>
+      <form method="get" action="search" class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>   
       </div>
     </div>
  </nav>
- <div class="jumbotron text-center">  
+ 
+ <div class=" text-center">  
 
  {% if messages %}
   {% for message in  messages %}
@@ -84,7 +91,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     
  
-{% block body %}{% endblock body %} 
+{% block body %}
+
+{% endblock body %} 
 
 </body>
 </html>    

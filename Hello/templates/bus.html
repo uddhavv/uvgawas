@@ -3,8 +3,74 @@
 
 {% block title %}Bus Tickets
 {% endblock title %}
- {% block body %}
 
-  <img src="{% static '17.jpg' %}" alt="...">
+{% csrf_token %}
+{% block body %}
+<div class="container mb-3 py-4">
+    <h1 class="text-danger text-center">|| Bus Ticket ||</h1>
+    <form method="post" action="">
+    {% csrf_token %}
+    <div style="color:AntiqueWhite;">
+        <div class="row mb-3 me-3">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="Bname" name="Bname" placeholder="Enter your Name">
+        </div>
+        </div>
+
+        <div class="row mb-3 me-3">
+            <label for="email" class="col-sm-2 col-form-label">Email address</label>
+             <div class="col-sm-10">
+            <input type="email" class="form-control" id="Bemail" name="Bemail" placeholder="Enter Your Email">
+        </div>
+        </div>
+        <div class="row mb-3 me-3 ">
+            <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+            <input type="phone" class="form-control" id="Bphone" name="Bphone" placeholder="Enter Your Phone Number">
+        </div></div>      
+        <div class="row mb-3 me-3">
+            <label for="start" class="col-sm-2 col-form-label">Starting Point</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="Bstart" name="Bstart" placeholder="From">
+        </div></div>     
+        <div class="row mb-3 me-3">
+            <label for="end" class="col-sm-2 col-form-label">Destination</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="Bend" name="Bend" placeholder="To">
+        </div></div>   
+        <div class="row mb-3 me-3">
+            <label for="date" class="col-sm-2 col-form-label">Date of Departure</label>
+            <div class="col-sm-10">
+            <input type="date" class="form-control" id="Bdate" name="Bdate" placeholder="Departure date">
+        </div> </div>   
+        <div class="row mb-3 me-3">
+            <label for="date" class="col-sm-2 col-form-label">No of Tickets</label>
+            <div class="col-sm-10">
+            <input type="text" class="form-control" id="Bticket" name="Bticket" placeholder="tickets">
+        </div> </div>           
+        <div class="row mb-3 me-3">
+            <label for="desc" class="col-sm-2 col-form-label">If you want to write something</label>
+            <div class="col-sm-10">
+            <textarea class="form-control" id="Bdesc" rows="3" name="Bdesc"></textarea>
+        </div>
+        </div>
+        </div>
+        <button class="btn btn-success btn-lg" type="submit">Submit</button>
+    </form>
+</div>
+<footer class="text-muted py-5">
+  <div class="container">
+      <div style="color:white;">
+
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">We make travelling EAZEEEE with &copy; UV Tours, so pack your bag and TRAVELLL </p>
+    <p class="mb-0">New to TICKETMAN <a href="{% url 'home' %}">Visit the homepage</a> or contact us <a href="contact"> to get good offers</a>.</p>
+  </div></div>
+</footer>
+{% endblock body %}
+
   
- {% endblock body %} 
+ 
