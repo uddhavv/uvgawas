@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '9outygakju4cd#4o)%pg1gs-s-7l6_391z1!y#wnbvz62%+zmv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['uvtours.herokuapp.com']
 
 
 # Application definition
